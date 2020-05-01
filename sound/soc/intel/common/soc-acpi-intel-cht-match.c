@@ -168,11 +168,12 @@ struct snd_soc_acpi_mach  snd_soc_acpi_intel_cherrytrail_machines[] = {
 	},
 	{
 		.id = "14F10720",
-		.drv_name = "bytcht_cx2072x",
+		.drv_name = "cht-cx2072x",
 		.fw_filename = "intel/fw_sst_22a8.bin",
-		.board = "bytcht_cx2072x",
-		.sof_fw_filename = "sof-cht.ri",
-		.sof_tplg_filename = "sof-cht-cx2072x.tplg",
+		.board = "cht-bsw",
+		.sof_fw_filename = "intel/reef-cht.ri",
+		.sof_tplg_filename = "intel/reef-cht-cx2072cx.tplg",
+		.asoc_plat_name = "sst-mfld-platform",
 	},
 #if IS_ENABLED(CONFIG_SND_SOC_INTEL_BYT_CHT_NOCODEC_MACH)
 	/*
