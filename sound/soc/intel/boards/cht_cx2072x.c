@@ -29,9 +29,9 @@
 #include <sound/pcm_params.h>
 #include <sound/soc.h>
 #include <sound/jack.h>
+#include <sound/soc-acpi.h>
 #include "../../codecs/cx2072x.h"
 #include "../atom/sst-atom-controls.h"
-#include "../common/sst-acpi.h"
 
 static const struct snd_soc_dapm_widget cht_dapm_widgets[] = {
 	SND_SOC_DAPM_HP("Headphone", NULL),
@@ -108,9 +108,9 @@ static int cht_codec_init(struct snd_soc_pcm_runtime *rtd)
 {
 	int ret;
 	struct snd_soc_card *card = rtd->card;
-	struct snd_soc_codec *codec = rtd->codec;
+	struct snd_soc_component *component = rtd->codec_dai->component;
 
-	if (devm_acpi_dev_add_driver_gpios(codec->dev,
+	if (devm_acpi_dev_add_driver_gpios(component->dev,
 					   acpi_cht_cx2072x_gpios))
 		dev_warn(rtd->dev, "Unable to add GPIO mapping table\n");
 
@@ -132,15 +132,15 @@ static int cht_codec_init(struct snd_soc_pcm_runtime *rtd)
 	if (ret)
 		return ret;
 
-	cht_cx_gpio.gpiod_dev = codec->dev;
-	cht_cx_gpio.data = codec;
+	cht_cx_gpio.gpiod_dev = component->dev;
+	cht_cx_gpio.data = component;
 	ret = snd_soc_jack_add_gpios(&cht_cx_headset, 1, &cht_cx_gpio);
 	if (ret) {
 		dev_err(rtd->dev, "Adding jack GPIO failed\n");
 		return ret;
 	}
 
-	cx2072x_enable_detect(codec);
+	cx2072x_enable_detect(component);
 
 	return ret;
 }
@@ -289,12 +289,12 @@ static int snd_cht_mc_probe(struct platform_device *pdev)
 {
 	int i;
 	int dai_index;
-	struct sst_acpi_mach *mach;
+	struct snd_soc_acpi_mach *mach = pdev->dev.platform_data;
 	const char *i2c_name = NULL;
 
 	/* register the soc card */
-	chtcx2072x_card.dev = &pdev->dev;
-	mach = chtcx2072x_card.dev->platform_data;
+	// chtcx2072x_card.dev = &pdev->dev;
+	// mach = chtcx2072x_card.dev->platform_data;
 
 	/* fix index of codec dai */
 	dai_index = MERR_DPCM_COMPR + 1;
@@ -306,13 +306,14 @@ static int snd_cht_mc_probe(struct platform_device *pdev)
 	}
 
 	/* fixup codec name based on HID */
-	i2c_name = sst_acpi_find_name_from_hid(mach->id);
-	if (i2c_name != NULL) {
+	i2c_name = acpi_dev_get_first_match_name(mach->id, NULL, -1);
+	if (i2c_name) {
 		snprintf(cht_cx_codec_name, sizeof(cht_cx_codec_name),
 			"%s%s", "i2c-", i2c_name);
 		cht_dailink[dai_index].codec_name = cht_cx_codec_name;
 	}
 
+	chtcx2072x_card.dev = &pdev->dev;
 	return devm_snd_soc_register_card(&pdev->dev, &chtcx2072x_card);
 }
 
