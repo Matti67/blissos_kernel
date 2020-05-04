@@ -215,7 +215,7 @@ static struct snd_soc_ops cht_be_ssp2_ops = {
 	.hw_params = cht_aif1_hw_params,
 };
 
-static struct snd_soc_dai_link cht_dailink[] = {
+static struct snd_soc_dai_link cht_dailink[4] = {
 	[MERR_DPCM_AUDIO] = {
 		.name = "Audio Port",
 		.stream_name = "Audio",

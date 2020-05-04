@@ -37,7 +37,7 @@ static struct snd_soc_acpi_mach cht_surface_mach = {
 	.board = "cht-bsw",
 	.sof_fw_filename = "sof-cht.ri",
 	.sof_tplg_filename = "sof-cht-rt5645.tplg",
-	.asoc_plat_name = "sst-mfld-platform",
+	//.asoc_plat_name = "sst-mfld-platform",
 };
 
 static struct snd_soc_acpi_mach *cht_quirk(void *arg)
@@ -61,7 +61,7 @@ struct snd_soc_acpi_mach  snd_soc_acpi_intel_cherrytrail_machines[] = {
 		.board = "cht-bsw",
 		.sof_fw_filename = "sof-cht.ri",
 		.sof_tplg_filename = "sof-cht-rt5670.tplg",
-		.asoc_plat_name = "sst-mfld-platform",
+		//.asoc_plat_name = "sst-mfld-platform",
 	},
 	{
 		.id = "10EC5672",
@@ -70,7 +70,7 @@ struct snd_soc_acpi_mach  snd_soc_acpi_intel_cherrytrail_machines[] = {
 		.board = "cht-bsw",
 		.sof_fw_filename = "sof-cht.ri",
 		.sof_tplg_filename = "sof-cht-rt5670.tplg",
-		.asoc_plat_name = "sst-mfld-platform",
+		//.asoc_plat_name = "sst-mfld-platform",
 	},
 	{
 		.id = "10EC5645",
@@ -79,7 +79,7 @@ struct snd_soc_acpi_mach  snd_soc_acpi_intel_cherrytrail_machines[] = {
 		.board = "cht-bsw",
 		.sof_fw_filename = "sof-cht.ri",
 		.sof_tplg_filename = "sof-cht-rt5645.tplg",
-		.asoc_plat_name = "sst-mfld-platform",
+		//.asoc_plat_name = "sst-mfld-platform",
 	},
 	{
 		.id = "10EC5650",
@@ -88,7 +88,7 @@ struct snd_soc_acpi_mach  snd_soc_acpi_intel_cherrytrail_machines[] = {
 		.board = "cht-bsw",
 		.sof_fw_filename = "sof-cht.ri",
 		.sof_tplg_filename = "sof-cht-rt5645.tplg",
-		.asoc_plat_name = "sst-mfld-platform",
+		//.asoc_plat_name = "sst-mfld-platform",
 	},
 	{
 		.id = "10EC3270",
@@ -97,7 +97,7 @@ struct snd_soc_acpi_mach  snd_soc_acpi_intel_cherrytrail_machines[] = {
 		.board = "cht-bsw",
 		.sof_fw_filename = "sof-cht.ri",
 		.sof_tplg_filename = "sof-cht-rt5645.tplg",
-		.asoc_plat_name = "sst-mfld-platform",
+		//.asoc_plat_name = "sst-mfld-platform",
 	},
 	{
 		.id = "193C9890",
@@ -106,7 +106,7 @@ struct snd_soc_acpi_mach  snd_soc_acpi_intel_cherrytrail_machines[] = {
 		.board = "cht-bsw",
 		.sof_fw_filename = "sof-cht.ri",
 		.sof_tplg_filename = "sof-cht-max98090.tplg",
-		.asoc_plat_name = "sst-mfld-platform",
+		//.asoc_plat_name = "sst-mfld-platform",
 	},
 	{
 		.id = "10508824",
@@ -115,7 +115,7 @@ struct snd_soc_acpi_mach  snd_soc_acpi_intel_cherrytrail_machines[] = {
 		.board = "cht-bsw",
 		.sof_fw_filename = "sof-cht.ri",
 		.sof_tplg_filename = "sof-cht-nau8824.tplg",
-		.asoc_plat_name = "sst-mfld-platform",
+		//.asoc_plat_name = "sst-mfld-platform",
 	},
 	{
                 .id = "14F10720",
@@ -124,7 +124,7 @@ struct snd_soc_acpi_mach  snd_soc_acpi_intel_cherrytrail_machines[] = {
                 .board = "cht-bsw",
                 .sof_fw_filename = "intel/reef-cht.ri",
                 .sof_tplg_filename = "intel/reef-cht-cx2072cx.tplg",
-                .asoc_plat_name = "sst-mfld-platform",
+                //.asoc_plat_name = "sst-mfld-platform",
         },
 	{
 		.id = "DLGS7212",
@@ -133,7 +133,7 @@ struct snd_soc_acpi_mach  snd_soc_acpi_intel_cherrytrail_machines[] = {
 		.board = "bytcht_da7213",
 		.sof_fw_filename = "sof-cht.ri",
 		.sof_tplg_filename = "sof-cht-da7213.tplg",
-		.asoc_plat_name = "sst-mfld-platform",
+		//.asoc_plat_name = "sst-mfld-platform",
 	},
 	{
 		.id = "DLGS7213",
@@ -142,7 +142,7 @@ struct snd_soc_acpi_mach  snd_soc_acpi_intel_cherrytrail_machines[] = {
 		.board = "bytcht_da7213",
 		.sof_fw_filename = "sof-cht.ri",
 		.sof_tplg_filename = "sof-cht-da7213.tplg",
-		.asoc_plat_name = "sst-mfld-platform",
+		//.asoc_plat_name = "sst-mfld-platform",
 	},
 	{
 		.id = "ESSX8316",
@@ -151,7 +151,7 @@ struct snd_soc_acpi_mach  snd_soc_acpi_intel_cherrytrail_machines[] = {
 		.board = "bytcht_es8316",
 		.sof_fw_filename = "sof-cht.ri",
 		.sof_tplg_filename = "sof-cht-es8316.tplg",
-		.asoc_plat_name = "sst-mfld-platform",
+		//.asoc_plat_name = "sst-mfld-platform",
 	},
 	/* some CHT-T platforms rely on RT5640, use Baytrail machine driver */
 	{
@@ -162,7 +162,7 @@ struct snd_soc_acpi_mach  snd_soc_acpi_intel_cherrytrail_machines[] = {
 		.machine_quirk = cht_quirk,
 		.sof_fw_filename = "sof-cht.ri",
 		.sof_tplg_filename = "sof-cht-rt5640.tplg",
-		.asoc_plat_name = "sst-mfld-platform",
+		//.asoc_plat_name = "sst-mfld-platform",
 	},
 	{
 		.id = "10EC3276",
@@ -171,14 +171,14 @@ struct snd_soc_acpi_mach  snd_soc_acpi_intel_cherrytrail_machines[] = {
 		.board = "bytcr_rt5640",
 		.sof_fw_filename = "sof-cht.ri",
 		.sof_tplg_filename = "sof-cht-rt5640.tplg",
-		.asoc_plat_name = "sst-mfld-platform",
+		//.asoc_plat_name = "sst-mfld-platform",
 	},
 	{
 		.id = "10EC5682",
 		.drv_name = "sof_rt5682",
 		.sof_fw_filename = "sof-cht.ri",
 		.sof_tplg_filename = "sof-cht-rt5682.tplg",
-		.asoc_plat_name = "sst-mfld-platform",
+		//.asoc_plat_name = "sst-mfld-platform",
 	},
 	/* some CHT-T platforms rely on RT5651, use Baytrail machine driver */
 	{
@@ -188,7 +188,7 @@ struct snd_soc_acpi_mach  snd_soc_acpi_intel_cherrytrail_machines[] = {
 		.board = "bytcr_rt5651",
 		.sof_fw_filename = "sof-cht.ri",
 		.sof_tplg_filename = "sof-cht-rt5651.tplg",
-		.asoc_plat_name = "sst-mfld-platform",
+		//.asoc_plat_name = "sst-mfld-platform",
 	},
 #if IS_ENABLED(CONFIG_SND_SOC_INTEL_BYT_CHT_NOCODEC_MACH)
 	/*
